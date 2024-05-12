@@ -11,7 +11,7 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 ## Screenshots and Demo
 
-![App screenshot](<WhatsApp Image 2024-05-12 at 8.29.00 PM.jpeg>)
+![App screenshot](<app_screenshot.jpeg>)
 
 <video controls src="individual_glyph_video.mp4" title="Individual glyph lighting"></video>
 
