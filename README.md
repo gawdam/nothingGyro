@@ -11,7 +11,7 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 ## Screenshots and Demo
 
-![App screenshot]([app_screenshot.jpeg](https://github.com/gawdam/nothingGyro/blob/main/app_screenshot.jpeg) =400x)
+![App screenshot](https://github.com/gawdam/nothingGyro/blob/main/app_screenshot.jpeg) =400x)
 
 ### Video Demos
 
