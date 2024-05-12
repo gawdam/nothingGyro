@@ -13,9 +13,9 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 ![App screenshot](<WhatsApp Image 2024-05-12 at 8.29.00 PM.jpeg>)
 
-<video controls src="WhatsApp Video 2024-05-11 at 12.21.31 PM.mp4" title="Individual glyph lighting"></video>
+<video controls src="individual_glyph_video.mp4" title="Individual glyph lighting"></video>
 
-<video controls src="WhatsApp Video 2024-05-12 at 8.14.02 PM.mp4" title="Surface levelling"></video>
+<video controls src="surface_levelling.mp4" title="Surface levelling"></video>
 
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
