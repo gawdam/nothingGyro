@@ -12,7 +12,9 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 ## Screenshots and Demo
 
 ![App screenshot](https://github.com/gawdam/nothingGyro/blob/main/app_screenshot.jpeg)
+
 ![Individual glyphs lighting up](individual_glyphs.gif)
+
 ![Surface levelling](surface_levelling.gif)
 
 ## Contributing
