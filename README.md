@@ -20,6 +20,7 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 ![Surface levelling](surface_levelling.gif)
  -->
+ 
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
