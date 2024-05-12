@@ -11,8 +11,8 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 ## Screenshots and Demo
 
-![App screenshot](https://github.com/gawdam/nothingGyro/blob/main/app_screenshot.jpeg) =400x)
-
+![App screenshot](https://github.com/gawdam/nothingGyro/blob/main/app_screenshot.jpeg)
+![video](https://github.com/gawdam/nothingGyro/raw/main/individual_glyph_video.mp4)
 ### Video Demos
 
 #### Individual Glyph Tilt
