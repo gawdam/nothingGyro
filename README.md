@@ -1,16 +1,21 @@
-# nothing_gyro
+# Nothing Bubble Level
 
-A new Flutter project.
+A simple and intuitive bubble level app for the Nothing phone (1) and (2), using the built-in accelerometer and gyroscope sensors to detect tilt angles. The app displays the phone's inclination through the iconic G glyph, making it easy to level surfaces with precision.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Utilizes the phone's accelerometer and gyroscope sensors to measure tilt angles
+- Visualizes the inclination through the G glyph on the phone's back
+- Lights up individual segments of the G glyph to indicate the direction of tilt
+- Fully lights up the G glyph when the phone is perfectly level
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots and Demo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![App screenshot](<WhatsApp Image 2024-05-12 at 8.29.00 PM.jpeg>)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<video controls src="WhatsApp Video 2024-05-11 at 12.21.31 PM.mp4" title="Individual glyph lighting"></video>
+
+<video controls src="WhatsApp Video 2024-05-12 at 8.14.02 PM.mp4" title="Surface levelling"></video>
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
