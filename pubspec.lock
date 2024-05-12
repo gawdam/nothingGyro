@@ -79,10 +79,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_tilt
-      sha256: bad39df2aca3c658530f20261ff8d3f5128cd29ef4cab39b1e37b15e9e6ce702
+      sha256: a5016b2f460f6c1840abe9601a431f858ee3152435ce9ed8e187156102e4bee8
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.4"
+    version: "3.0.1"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -180,10 +180,10 @@ packages:
     dependency: "direct main"
     description:
       name: sensors_plus
-      sha256: "362c8f4f001838b90dd5206b898bbad941bc0142479eab9a3415f0f79e622908"
+      sha256: "6898cd4490ffc27fea4de5976585e92fae55355175d46c6c3b3d719d42f9e230"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.1"
+    version: "5.0.1"
   sensors_plus_platform_interface:
     dependency: transitive
     description:
@@ -192,14 +192,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  sensors_plus_web:
-    dependency: transitive
-    description:
-      name: sensors_plus_web
-      sha256: fca8d7d9ab6233b2a059952666415508e252420be1ef54f092d07884da53ec5e
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -287,4 +279,4 @@ packages:
     version: "13.0.0"
 sdks:
   dart: ">=3.3.4 <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.19.0"

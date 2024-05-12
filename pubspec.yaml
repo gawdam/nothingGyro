@@ -16,7 +16,10 @@ dependencies:
   nothing_glyph_interface: ^0.0.4
   sensors_plus: ^1.4.1
   tilt: ^0.0.2
-  flutter_tilt: 1.0.4
+  flutter_tilt: 3.0.1
+
+dependency_overrides:
+  sensors_plus: ^5.0.1
 
 dev_dependencies:
   flutter_test:
@@ -32,11 +35,12 @@ flutter:
   assets:
     - assets/images/NP1.jpg
     - assets/images/NP2.jpg
+    - assets/images/NPfront.png
 
-fonts:
-  - family: NothingFont
-    fonts:
-      - asset: assets/fonts/nothing-font-5x7.ttf
+  fonts:
+    - family: NothingFont
+      fonts:
+        - asset: assets/fonts/nothing-font-5x7.ttf
   
 
  
