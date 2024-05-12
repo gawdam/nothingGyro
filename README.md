@@ -11,7 +11,7 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 ## Screenshots and Demo
 
-![App screenshot](<app_screenshot.jpeg>|height=200)
+![App screenshot](<app_screenshot.jpeg> | height=200)
 
 <video controls="" width="800" height="500" muted="" loop="" autoplay="">
 <source src="https://github.com/gawdam/nothingGyro/blob/main/individual_glyph_video.mp4" type="video/mp4">
