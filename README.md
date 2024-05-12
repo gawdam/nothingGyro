@@ -11,11 +11,10 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 ## Screenshots and Demo
 
-![App screenshot](<app_screenshot.jpeg>)
-
-<video controls src="individual_glyph_video.mp4" title="Individual glyph lighting"></video>
-
-<video controls src="surface_levelling.mp4" title="Surface levelling"></video>
+![App screenshot](https://github.com/gawdam/nothingGyro/blob/main/app_screenshot.jpeg)
+![Individual glyphs lighting up](individual_glyphs.gif)
+![Surface levelling](surface_levelling.gif)
 
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
