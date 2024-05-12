@@ -17,7 +17,7 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 #### Individual Glyph Tilt
 
-<video controls width="400">
+![video]<video controls width="400">
 <source src="https://github.com/gawdam/nothingGyro/raw/main/individual_glyph_video.mp4" type="video/mp4">
 </video>
 
