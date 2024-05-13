@@ -1,4 +1,4 @@
-# Nothing Bubble Level
+# Nothing Glyph Gyroscope
 
 A simple and intuitive bubble level app for the Nothing phone (1) and (2), using the built-in accelerometer and gyroscope sensors to detect tilt angles. The app displays the phone's inclination through the iconic G glyph, making it easy to level surfaces with precision.
 
