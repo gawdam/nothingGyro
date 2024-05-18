@@ -63,7 +63,7 @@ class Glyph {
               GlyphFrameBuilder().buildChannel(0).buildChannel(1).build());
       } else {
         if (x.abs() > thresh) {
-          if (x > 0)
+          if (x < 0)
             glyphInterfacePlugin.buildGlyphFrame(
                 GlyphFrameBuilder().buildChannelE().buildChannelD().build());
           else

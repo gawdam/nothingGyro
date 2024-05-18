@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_tilt/flutter_tilt.dart' as imgTilt;
 import 'package:nothing_gyro/glpyh.dart';
 import 'package:nothing_gyro/tilt.dart';
+import 'dart:math';
 
 class TiltDisplay extends StatelessWidget {
   TiltDisplay({
@@ -27,7 +29,7 @@ class TiltDisplay extends StatelessWidget {
     } else {
       glyph.turnOff();
     }
-    if (orientation == OrientationType.level)
+    if (orientation == OrientationType.level) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -117,9 +119,29 @@ class TiltDisplay extends StatelessWidget {
           ),
         ],
       );
-    return Text(
-      "x = ${x.toString()}, y = ${y.toString()}",
-      style: TextStyle(color: Colors.white),
+    }
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        AnimatedRotation(
+            duration: Duration(milliseconds: 300),
+            turns: (x.abs() > 45
+                    ? (x.sign * (x.abs() - 90) * pi / 180)
+                        .clamp(-15 * pi / 180, 15 * pi / 180)
+                    : (x.sign * (x.abs()) * pi / 180)
+                        .clamp(-15 * pi / 180, 15 * pi / 180)) /
+                2 /
+                pi,
+            child: Container(
+              width: 130,
+              height: 300,
+              child: Image.asset(
+                'assets/images/NPfront.png',
+                scale: 0.5,
+              ),
+            )),
+      ],
     );
   }
 }
