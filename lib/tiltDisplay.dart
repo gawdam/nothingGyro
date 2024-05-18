@@ -120,27 +120,98 @@ class TiltDisplay extends StatelessWidget {
         ],
       );
     }
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        AnimatedRotation(
-            duration: Duration(milliseconds: 300),
-            turns: (x.abs() > 45
-                    ? (x.sign * (x.abs() - 90) * pi / 180)
-                        .clamp(-15 * pi / 180, 15 * pi / 180)
-                    : (x.sign * (x.abs()) * pi / 180)
-                        .clamp(-15 * pi / 180, 15 * pi / 180)) /
-                2 /
-                pi,
-            child: Container(
-              width: 130,
-              height: 300,
-              child: Image.asset(
-                'assets/images/NPfront.png',
-                scale: 0.5,
+        Container(
+          alignment: Alignment.topLeft,
+          height: 55, // Fixed height
+          child: (x > 0 && x.abs() < 45)
+              ? RotatedBox(
+                  quarterTurns: 3,
+                  child: Text(
+                    "${(x).toStringAsFixed(1)}°",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontFamily: "Ntype82"),
+                  ),
+                )
+              : Container(),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              alignment: Alignment.topLeft,
+              width: 55, // Fixed height
+              child: (x > 0 && x > 45)
+                  ? Text(
+                      "${(90 - x).toStringAsFixed(1)}°",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontFamily: "Ntype82"),
+                    )
+                  : Container(),
+            ),
+            SizedBox(
+              width: 30,
+            ),
+            AnimatedRotation(
+              duration: Duration(milliseconds: 300),
+              turns: (x.abs() > 45
+                      ? (x.sign * (x.abs() - 90) * pi / 180)
+                          .clamp(-30 * pi / 180, 30 * pi / 180)
+                      : (x.sign * (x.abs()) * pi / 180)
+                          .clamp(-30 * pi / 180, 30 * pi / 180)) /
+                  2 /
+                  pi,
+              child: Container(
+                width: 130,
+                height: 300,
+                child: Image.asset(
+                  'assets/images/NPfront.png',
+                  scale: 0.5,
+                ),
               ),
-            )),
+            ),
+            SizedBox(
+              width: 30,
+            ),
+            Container(
+              alignment: Alignment.topCenter,
+              width: 55, // Fixed height
+              child: (x < 0 && x.abs() > 45)
+                  ? Text(
+                      "${(90 - x.abs()).toStringAsFixed(1)}°",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontFamily: "Ntype82"),
+                    )
+                  : Container(),
+            ),
+          ],
+        ),
+        Container(
+          alignment: Alignment.topLeft,
+          height: 55, // Fixed height
+          child: (x < 0 && x.abs() < 45)
+              ? RotatedBox(
+                  quarterTurns: 3,
+                  child: Text(
+                    "${(x.abs()).toStringAsFixed(1)}°",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontFamily: "Ntype82"),
+                  ),
+                )
+              : Container(),
+        ),
       ],
     );
   }

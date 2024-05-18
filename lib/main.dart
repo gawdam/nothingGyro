@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     (Set<MaterialState> states) {
       // Material color when switch is selected.
       if (states.contains(MaterialState.selected)) {
-        return Colors.red.withOpacity(0.9);
+        return Color(0xffD71921);
       }
       // Material color when switch is disabled.
       if (states.contains(MaterialState.disabled)) {
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
     (Set<MaterialState> states) {
       // Track color when the switch is selected.
       if (states.contains(MaterialState.selected)) {
-        return Colors.red;
+        return Color(0xffD71921);
       }
       // Otherwise return null to set default track color
       // for remaining states such as when the switch is
@@ -83,9 +83,9 @@ class _MyAppState extends State<MyApp> {
                     width: 250,
                     height: 140,
                     decoration: BoxDecoration(
-                      color: Colors.grey[900],
+                      color: Color(0xff1B1B1D),
                       border: Border.all(
-                        color: Colors.red,
+                        color: Color(0xffD71921),
                         strokeAlign: BorderSide.strokeAlignInside,
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -160,9 +160,9 @@ class _MyAppState extends State<MyApp> {
                     width: 350,
                     height: 550,
                     decoration: BoxDecoration(
-                      color: Colors.grey[900],
+                      color: Color(0xff1B1B1D),
                       border: Border.all(
-                        color: Colors.red,
+                        color: Color(0xffD71921),
                         strokeAlign: BorderSide.strokeAlignInside,
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(20)),
