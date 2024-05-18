@@ -1,10 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nothing_gyro/axisPainter.dart';
 import 'package:nothing_gyro/glpyh.dart';
 import 'package:nothing_gyro/tilt.dart';
-import 'package:tilt/tilt.dart' as tlt;
-import 'package:flutter_tilt/flutter_tilt.dart';
+import 'package:nothing_gyro/tiltDisplay.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,19 +12,58 @@ void main() {
 
 const thresh = 0.5;
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _glyphEnabled = true;
+  bool _cameraMode = false;
+
+  final MaterialStateProperty<Color?> overlayColor =
+      MaterialStateProperty.resolveWith<Color?>(
+    (Set<MaterialState> states) {
+      // Material color when switch is selected.
+      if (states.contains(MaterialState.selected)) {
+        return Colors.red.withOpacity(0.9);
+      }
+      // Material color when switch is disabled.
+      if (states.contains(MaterialState.disabled)) {
+        return Colors.grey.shade400;
+      }
+      // Otherwise return null to set default material color
+      // for remaining states such as when the switch is
+      // hovered, or focused.
+      return null;
+    },
+  );
+  final MaterialStateProperty<Color?> trackColor =
+      MaterialStateProperty.resolveWith<Color?>(
+    (Set<MaterialState> states) {
+      // Track color when the switch is selected.
+      if (states.contains(MaterialState.selected)) {
+        return Colors.red;
+      }
+      // Otherwise return null to set default track color
+      // for remaining states such as when the switch is
+      // hovered, focused, or disabled.
+      return null;
+    },
+  );
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: "NothingFont"),
+      theme: ThemeData(fontFamily: "NDot"),
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
             'NOTHING LEVEL',
             style: TextStyle(
-                color: Colors.white, fontFamily: "NothingFont", fontSize: 24),
+                color: Colors.white, fontFamily: "NDot", fontSize: 24),
           ),
           centerTitle: true,
           backgroundColor: Colors.black,
@@ -32,114 +71,139 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.black45,
         body: Builder(
           builder: (BuildContext context) {
-            return Stack(
-              children: [
-                Positioned.fill(
-                  child: CustomPaint(
-                    painter: AxesPainter(),
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 20,
                   ),
-                ),
-                Center(
-                  child: StreamBuilder<tlt.Tilt>(
-                    stream: getTilt(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData && snapshot.data != null) {
-                        double x = transformAngle(snapshot.data!.xDegrees);
-                        double y = transformAngle(snapshot.data!.yDegrees);
-                        toggleChannels(x, y, thresh);
-                        return Column(
+                  Container(
+                    width: 250,
+                    height: 140,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      border: Border.all(
+                        color: Colors.red,
+                        strokeAlign: BorderSide.strokeAlignInside,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              height: 50,
-                              child: x < 0
-                                  ? Text(
-                                      "${x.abs().toStringAsFixed(1)}°",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 24),
-                                    )
-                                  : Container(),
+                            const Text(
+                              "Glpyh",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontFamily: "Ntype82"),
                             ),
-                            SizedBox(height: 20),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 70,
-                                  alignment: Alignment.centerRight,
-                                  child: y < 0
-                                      ? Text(
-                                          "${y.abs().toStringAsFixed(1)}°",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 24),
-                                        )
-                                      : Container(),
-                                ),
-                                SizedBox(width: 10),
-                                Container(
-                                  width: 200,
-                                  height: 400,
-                                  child: Tilt(
-                                    borderRadius: BorderRadius.circular(24),
-                                    tiltConfig: const TiltConfig(
-                                        angle: 30,
-                                        enableGestureTouch: false,
-                                        enableSensorRevert: false,
-                                        sensorFactor: 10,
-                                        enableReverse: true),
-                                    lightConfig: const LightConfig(
-                                        minIntensity: 0.1,
-                                        enableReverse: true,
-                                        disable: true),
-                                    shadowConfig: const ShadowConfig(
-                                        minIntensity: 0.05,
-                                        maxIntensity: 0.4,
-                                        offsetFactor: 0.08,
-                                        minBlurRadius: 10,
-                                        maxBlurRadius: 15,
-                                        enableReverse: true),
-                                    child: Image.asset(
-                                        'assets/images/NPfront.png'),
-                                  ),
-                                ),
-                                SizedBox(width: 10),
-                                Container(
-                                  width: 70, // Fixed width
-                                  alignment: Alignment.centerLeft,
-                                  child: y > 0
-                                      ? Text(
-                                          "${y.toStringAsFixed(1)}°",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 24,
-                                          ),
-                                        )
-                                      : Container(),
-                                ),
-                              ],
+                            SizedBox(
+                              width: 30,
                             ),
-                            SizedBox(height: 20),
-                            Container(
-                              height: 50, // Fixed height
-                              child: x > 0
-                                  ? Text(
-                                      "${x.toStringAsFixed(1)}°",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 24),
-                                    )
-                                  : Container(),
+                            Switch(
+                              thumbColor: const MaterialStatePropertyAll<Color>(
+                                  Colors.black),
+                              overlayColor: overlayColor,
+                              trackColor: trackColor,
+                              value: _glyphEnabled,
+                              onChanged: (value) {
+                                setState(() {
+                                  _glyphEnabled = value;
+                                });
+                              },
                             ),
                           ],
-                        );
-                      }
-                      return const CircularProgressIndicator();
-                    },
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Camera mode",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontFamily: "Ntype82"),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Switch(
+                              thumbColor: const MaterialStatePropertyAll<Color>(
+                                  Colors.black),
+                              overlayColor: overlayColor,
+                              trackColor: trackColor,
+                              value: _cameraMode,
+                              onChanged: (value) {
+                                setState(() {
+                                  _cameraMode = value;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    width: 350,
+                    height: 550,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      border: Border.all(
+                        color: Colors.red,
+                        strokeAlign: BorderSide.strokeAlignInside,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    padding: EdgeInsets.all(20),
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: CustomPaint(
+                            painter: AxesPainter(),
+                          ),
+                        ),
+                        Center(
+                          child: StreamBuilder(
+                            stream: getTilt(_cameraMode
+                                ? OrientationType.camera
+                                : OrientationType.level),
+                            builder: (context, snapshot) {
+                              if (snapshot.hasData && snapshot.data != null) {
+                                double x =
+                                    transformAngle(snapshot.data!.xDegrees);
+                                double y =
+                                    transformAngle(snapshot.data!.yDegrees);
+
+                                return TiltDisplay(
+                                    x: x,
+                                    y: y,
+                                    glyphEnabled: _glyphEnabled,
+                                    orientation: _cameraMode
+                                        ? OrientationType.camera
+                                        : OrientationType.level);
+                              }
+                              return const CircularProgressIndicator();
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),

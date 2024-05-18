@@ -14,12 +14,12 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   nothing_glyph_interface: ^0.0.4
-  sensors_plus: ^1.4.1
-  tilt: ^0.0.2
+  sensors_plus: ^5.0.1
+  # tilt: ^0.0.2
   flutter_tilt: 3.0.1
 
-dependency_overrides:
-  sensors_plus: ^5.0.1
+# dependency_overrides:
+#   sensors_plus: ^1.4.1
 
 dev_dependencies:
   flutter_test:
@@ -38,9 +38,16 @@ flutter:
     - assets/images/NPfront.png
 
   fonts:
-    - family: NothingFont
+    - family: Ndot
       fonts:
         - asset: assets/fonts/nothing-font-5x7.ttf
+    - family: NType82
+      fonts:
+        - asset: assets\fonts\NType82-Regular.otf
+    - family: NType82Mono
+      fonts:
+        - asset: assets\fonts\NType82Mono-Regular.otf
+        
   
 
  

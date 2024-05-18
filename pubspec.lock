@@ -253,14 +253,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
-  tilt:
-    dependency: "direct main"
-    description:
-      name: tilt
-      sha256: f5f03b924c8b66fd0a2b357d81ab246b83cfe7b9214cd0180ec90cbbabbb73b8
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.2"
   vector_math:
     dependency: transitive
     description:
