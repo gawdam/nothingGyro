@@ -76,11 +76,8 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 20,
-                  ),
                   Container(
-                    width: 250,
+                    width: 350,
                     height: 140,
                     decoration: BoxDecoration(
                       color: Color(0xff1B1B1D),
@@ -153,7 +150,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Container(
                     alignment: Alignment.center,

@@ -3,15 +3,14 @@ import 'package:nothing_gyro/tilt.dart';
 
 class Glyph {
   NothingGlyphInterface glyphInterfacePlugin = NothingGlyphInterface();
+
   void turnOff() {
     glyphInterfacePlugin.turnOff();
   }
 
-  void toggleChannels(double x, double y, double thresh, Enum mode) {
-    glyphInterfacePlugin.init();
-    print("$x, $y, $thresh, $mode");
-
-    if (mode == OrientationType.level) {
+  void toggleChannels(double x, double y, double thresh, bool cameraMode) {
+    print("$x, $y, $thresh, $cameraMode");
+    if (!cameraMode) {
       if (x.abs() < thresh && y.abs() < thresh) {
         glyphInterfacePlugin.buildGlyphFrame(GlyphFrameBuilder()
             .buildChannel(2)
