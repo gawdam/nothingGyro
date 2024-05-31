@@ -13,8 +13,7 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 
 
 
-https://github.com/gawdam/nothingGyro/assets/19368262/5c55bc60-756f-4f0b-acf5-3fb692905b84
-
+[Camera mode](https://github.com/gawdam/nothingGyro/assets/19368262/4e712471-c639-47ed-b627-1907970cd18d)
 <img src="https://github.com/gawdam/nothingGyro/assets/19368262/4e712471-c639-47ed-b627-1907970cd18d" height="500">
 
 <img src="https://github.com/gawdam/nothingGyro/blob/main/individual_glyphs.gif" height="500">
