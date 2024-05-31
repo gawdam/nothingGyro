@@ -10,6 +10,7 @@ A simple and intuitive bubble level app for the Nothing phone (1) and (2), using
 - Fully lights up the G glyph when the phone is perfectly level
 
 ## Screenshots and Demo
+![WhatsApp Image 2024-05-31 at 12 17 00 PM](https://github.com/gawdam/nothingGyro/assets/19368262/4e712471-c639-47ed-b627-1907970cd18d)
 
 <img src="https://github.com/gawdam/nothingGyro/blob/main/app_screenshot.jpeg" height="500">
 
