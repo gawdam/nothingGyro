@@ -2,7 +2,7 @@ name: nothing_gyro
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.3+3
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
@@ -17,6 +17,7 @@ dependencies:
   sensors_plus: ^5.0.1
   # tilt: ^0.0.2
   flutter_tilt: 3.0.1
+  flutter_launcher_icons: ^0.13.1
 
 # dependency_overrides:
 #   sensors_plus: ^1.4.1
