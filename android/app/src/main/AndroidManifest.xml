@@ -19,7 +19,7 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-            <meta-data android:name="NothingKey" android:value="test"/>
+            <meta-data android:name="NothingKey" android:value="55b7bb63ee2342769ac3ff293bc6477a"/>
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
