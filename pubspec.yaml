@@ -2,7 +2,7 @@ name: nothing_gyro
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 1.0.3+3
+version: 1.0.4+4
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
@@ -28,6 +28,7 @@ dev_dependencies:
 
 
   flutter_lints: ^3.0.0
+  change_app_package_name: ^1.3.0
 
 
 flutter:
